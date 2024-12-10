@@ -3,7 +3,7 @@ import os
 # 定义要处理的文件夹路径
 input_folder = 'decode_image'  # 替换为你的输入文件夹路径
 # 定义输出文件夹路径
-output_folder = 'dddecode_image'
+output_folder = 'image_without_encrypt'
 
 # 确保输出文件夹存在
 os.makedirs(output_folder, exist_ok=True)
