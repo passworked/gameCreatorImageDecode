@@ -1,4 +1,7 @@
 *.png
 *.jpg
 *.zip
+*.csv
 /old
+/节目用
+/psd_auto
