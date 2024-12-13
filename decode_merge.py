@@ -1,9 +1,9 @@
 import os
 
 # 定义要处理的文件夹路径
-input_folder = 'decode_image'  # 替换为你的输入文件夹路径
+input_folder = 'image1'  # 替换为你的输入文件夹路径
 # 定义输出文件夹路径
-output_folder = 'image_without_encrypt'
+output_folder = 'image_without_encrypt1'
 
 # 确保输出文件夹存在
 os.makedirs(output_folder, exist_ok=True)
@@ -27,6 +27,10 @@ for root, dirs, files in os.walk(input_folder):
                     del byte_array[len(byte_array) // 2 - 1]  # 删除索引加 1 的字节
                 else:  # 奇数个字节
                     del byte_array[len(byte_array) // 2]  # 删除该字节
+
+            # 交换第二个和第三个字节
+            if len(byte_array) >= 3:  # 确保字节数组至少有三个字节
+                byte_array[1], byte_array[2] = byte_array[2], byte_array[1]  # 交换第二和第三个字节
 
             # 定义输出文件的相对路径
             relative_path = os.path.relpath(root, input_folder)
